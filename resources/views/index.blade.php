@@ -68,23 +68,23 @@
       <form action="#" method="POST" id="edit_perfume_form" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="update_perfume_id" id="update_perfume_id">
-        <input type="hidden" name="update_perfume_image" id="update_perfume_image">
+        <input type="hidden" name="perfume_update_image" id="perfume_update_image">
         <div class="modal-body p-4 bg-light">
           <div class="my-2">
             <label for="perfume_name">Name</label>
-            <input type="text" name="perfume_name" id="perfume_name" class="form-control" placeholder="Post" required>
+            <input type="text" name="perfume_name" id="perfume_name" class="form-control" placeholder="Name" required>
           </div>
           <div class="my-2">
             <label for="perfume_flavor">Flavor</label>
-            <input type="text" name="perfume_flavor" id="perfume_flavor" class="form-control" placeholder="Post" required>
+            <input type="text" name="perfume_flavor" id="perfume_flavor" class="form-control" placeholder="Flavor" required>
           </div>
           <div class="my-2">
             <label for="perfume_country">Country</label>
-            <input type="text" name="perfume_country" id="perfume_country" class="form-control" placeholder="Post" required>
+            <input type="text" name="erfume_country" id="perfume_country" class="form-control" placeholder="Country" required>
           </div>
           <div class="my-2">
             <label for="perfume_price">Price</label>
-            <input type="text" name="perfume_price" id="perfume_price" class="form-control" placeholder="Post" required>
+            <input type="text" name="perfume_price" id="perfume_price" class="form-control" placeholder="Price" required>
           </div>
           <div class="my-2">
             <label for="perfume_image">Select Image</label>
@@ -165,6 +165,7 @@
           url: '{{ route('edit') }}',
           method: 'get',
           data: {
+            id: id,
             _token: '{{ csrf_token() }}'
           },
           success: function(response) {
@@ -175,7 +176,7 @@
             $("#perfume_image").html(
               `<img src="files/public/images/${response.perfume_image}" width="100" class="img-fluid img-thumbnail">`);
             $("#update_perfume_id").val(response.id);
-            $("#update_perfume_image").val(response.perfume_image);
+            $("#perfume_update_image").val(response.perfume_image);
           }
         });
       });

@@ -83,7 +83,7 @@ class PerfumeController extends Controller {
                 Storage::delete('public/images/' . $perf->perfume_image);
             }
         } else {
-            $fileName = $request->update_perfume_image;
+            $fileName = $request->perfume_update_image;
         }
 
         $perfData = ['perfume_name' => $request->perfume_name, 'perfume_flavor' => $request->perfume_flavor, 'perfume_country' => $request->perfume_country, 'perfume_price' => $request->perfume_price, 'perfume_image' => $fileName];
