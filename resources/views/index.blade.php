@@ -80,7 +80,7 @@
           </div>
           <div class="my-2">
             <label for="perfume_country">Country</label>
-            <input type="text" name="erfume_country" id="perfume_country" class="form-control" placeholder="Country" required>
+            <input type="text" name="perfume_country" id="perfume_country" class="form-control" placeholder="Country" required>
           </div>
           <div class="my-2">
             <label for="perfume_price">Price</label>
